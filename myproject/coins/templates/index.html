@@ -14,11 +14,13 @@
     {% include 'banner.html'%}
     <div class="container">
         <h1>Coin Detection</h1>
-        <form method="post" enctype="multipart/form-data">
-            {% csrf_token %}
-            <input type="file" name="image" accept="image/*" required>
-            <button type="submit">Detect</button>
-        </form>
+        <div style="display: flex; justify-content: center;">
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <input type="file" name="image" accept="image/*" required>
+                <button type="submit">Detect</button>
+            </form>
+        </div>
         {% if image_url %}
         <div class="result-container">
             <img src="{{ image_url }}" alt="Submitted Image" class="image">
@@ -34,6 +36,7 @@
                     {% endfor %}
                 </ul>
             </div>
+            
         </div>
         
         {% endif %}
