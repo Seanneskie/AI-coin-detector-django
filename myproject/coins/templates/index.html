@@ -1,0 +1,42 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
+    <title>Coin Detection</title>
+</head>
+<body>
+    {% include 'navbar.html' %}
+    {% include 'banner.html'%}
+    <div class="container">
+        <h1>Coin Detection</h1>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <input type="file" name="image" accept="image/*" required>
+            <button type="submit">Detect</button>
+        </form>
+        {% if image_url %}
+        <div class="result-container">
+            <img src="{{ image_url }}" alt="Submitted Image" class="image">
+            <div class="confidence-scores">
+                <h2>Results:</h2>
+                <ul>
+                    {% for class_name, confidence_score in class_names_with_scores %}
+                    <li>
+                        <span class="bold-text">{{ class_name }}</span>
+                        <progress value="{{ confidence_score }}" max="1" class="progress-bar {% if confidence_score >= 0.7 %}high-confidence{% elif confidence_score >= 0.4 %}medium-confidence{% else %}low-confidence{% endif %}"></progress>
+                        <span class="confidence_score">{{ confidence_score }}</span>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        
+        {% endif %}
+    </div>
+</body>
+</html>

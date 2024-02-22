@@ -1,0 +1,154 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #E6D8BD ;
+}
+
+.navbar {
+    background-color: #C97338 ; /* PEARL */
+    color: #282119; /* EERIE BLACK */
+    text-align: center;
+    padding: 10px 0;
+}
+
+.navbar a {
+    color: #282119; /* EERIE BLACK */
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.navbar a:hover {
+    text-decoration: underline;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.result-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+    align-items: center;
+    padding: 10px;
+}
+
+.image {
+    width: 250px;
+    height: 350px;
+    border: 2px solid #282119;
+    padding: 20px;
+}
+
+.confidence-score {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.scale-bar {
+    height: 20px;
+    background-color: #4CAF50; /* Green color for the scale bar */
+    border-radius: 5px;
+}
+
+
+/* Additional styles for the color scheme */
+h1, h2, h3, h4, h5, h6 {
+    color: #282119; /* EERIE BLACK */
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 5px;
+}
+
+/* Classes for different color text */
+.text-pearl {
+    color: #E6D8BD; /* PEARL */
+}
+
+.text-cca-brown {
+    color: #C97338; /* CCA BROWN */
+}
+
+.text-rust {
+    color: #A54D27; /* RUST */
+}
+
+.text-seal-brown {
+    color: #65371F; /* SEAL BROWN */
+}
+
+.text-eerie-black {
+    color: #282119; /* EERIE BLACK */
+}
+
+
+.progress-bar {
+    width: 100%;
+    height: 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #f2f2f2; /* Default color */
+}
+
+/* Define colors based on confidence score */
+.progress-bar.low-confidence::-webkit-progress-value {
+    background-color: #65371F; /* SEAL BROWN */
+}
+
+.progress-bar.medium-confidence::-webkit-progress-value {
+    background-color: #A54D27; /* RUST */
+}
+
+.progress-bar.high-confidence::-webkit-progress-value {
+    background-color: #C97338; /* CCA BROWN */
+}
+
+.progress-bar.over-confidence::-webkit-progress-value {
+    background-color: #E6D8BD; /* PEARL */
+}
+
+.bold-text {
+    font-weight: bold;
+    color:#282119 ;
+}
+
+
+/* Apply the color scheme to the file input */
+input[type="file"] {
+    border: 2px solid #E6D8BD; /* PEARL */
+    padding: 8px;
+    background-color: #f9f9f9;
+    color: #282119; /* EERIE BLACK */
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Apply the color scheme to the detect button */
+button[type="submit"] {
+    background-color: #C97338; /* CCA BROWN */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* Style for button hover effect */
+button[type="submit"]:hover {
+    background-color: #A54D27; /* RUST */
+}
