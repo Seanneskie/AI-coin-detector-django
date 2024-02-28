@@ -2,11 +2,11 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #E6D8BD ;
+    background-color: #E6D8BD;
 }
 
 .navbar {
-    background-color: #C97338 ; /* PEARL */
+    background-color: #C97338; /* PEARL */
     color: #282119; /* EERIE BLACK */
     text-align: center;
     padding: 10px 0;
@@ -23,34 +23,39 @@ body {
 }
 
 .container {
-    max-width: 800px;
+    max-width: 100%;
     margin: 20px auto;
     padding: 20px;
     background-color: #f9f9f9;
     border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .result-container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr  1fr;
     grid-gap: 20px;
     align-items: center;
     padding: 10px;
 }
 
 .image {
-    width: 250px;
-    height: 350px;
+    max-width: 100%;
+    height: auto;
     border: 2px solid #282119;
     padding: 20px;
+    display: flex;
+    justify-content: center; /* Horizontally center */
+    align-items: center; /* Vertically center */
+    margin-left: 25%;
 }
+
 
 .confidence-score {
     padding: 20px;
     background-color: #f9f9f9;
     border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .scale-bar {
@@ -58,7 +63,6 @@ body {
     background-color: #4CAF50; /* Green color for the scale bar */
     border-radius: 5px;
 }
-
 
 /* Additional styles for the color scheme */
 h1, h2, h3, h4, h5, h6 {
@@ -95,7 +99,6 @@ li {
     color: #282119; /* EERIE BLACK */
 }
 
-
 .progress-bar {
     width: 100%;
     height: 20px;
@@ -123,9 +126,8 @@ li {
 
 .bold-text {
     font-weight: bold;
-    color:#282119 ;
+    color: #282119;
 }
-
 
 /* Apply the color scheme to the file input */
 input[type="file"] {
@@ -151,4 +153,152 @@ button[type="submit"] {
 /* Style for button hover effect */
 button[type="submit"]:hover {
     background-color: #A54D27; /* RUST */
+}
+/* Style the images inside table cells */
+table img.detection-image {
+    max-width: 100px;
+    max-height: 100px;
+    display: block;
+    margin: 0 auto; /* Center the images horizontally */
+}
+
+/* Style the table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px; /* Add margin to the top of the table */
+}
+
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+table th {
+    background-color: #f2f2f2;
+}
+
+
+.coin-detection-form-container {
+    /* Add your styles here */
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.detection-image {
+    max-width: 100px; /* Set the maximum width of the image */
+    max-height: 100px; /* Set the maximum height of the image */
+    display: block; /* Ensure the image is displayed as a block element */
+    margin: 0 auto; /* Center the image horizontally */
+}
+
+.banner {
+    background-color: inherit ; /* PEARL */
+    color: #282119; /* EERIE BLACK */
+    text-align: center;
+    height: 200px;
+}
+
+
+nav {
+    background-color:#C97338  ;
+    color: #282119; /* EERIE BLACK */
+    text-align: center;
+    padding: 10px 0;
+}
+nav a {
+    color: #282119; /* EERIE BLACK */
+    text-decoration: none;
+    margin: 0 10px;
+}
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Styles for iPhone XR portrait mode */
+@media only screen and (min-width: 100px) and (max-width: 896px) {
+    body{
+        width: 100%;
+    }
+    .banner {
+        height: auto;
+        max-height: 200px; /* Set a maximum height for the container */
+        width: 100%;
+        overflow: auto; /* Add overflow property to enable scrolling if the content exceeds the height */
+        word-wrap: break-word; /* Allow long words to be broken and wrap to the next line */
+    }
+    
+    .container {
+        max-width: 100%; /* Adjust the max-width for the container */
+    }
+    img.image {
+        width: 100px !important;
+    }
+    nav {
+        background-color:#C97338  ;
+        color: #282119; /* EERIE BLACK */
+        text-align: center;
+        padding: 10px 0;
+        width: 100%;
+    }
+
+    #coinDetectionForm.input{
+        width: 70%;
+    }
+    .coin-detection-form-container {
+        /* Add your styles here */
+        margin-top: 20px;
+        padding: 30px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    
+
+    .result-container {
+        grid-template-columns: 1fr; /* Change the grid layout for smaller screens */
+    }
+
+    .image {
+        width: 100%; /* Make the image fill the container width */
+        height: auto; /* Maintain aspect ratio */
+        max-width: 100%; /* Ensure the image doesn't exceed its container width */
+    }
+
+    .coin-detection-form-container {
+        /* Adjust styles for the form container on smaller screens */
+        margin-top: 20px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .detection-image {
+        max-width: 100px; /* Set the maximum width of the image */
+        max-height: 100px; /* Set the maximum height of the image */
+        display: block; /* Ensure the image is displayed as a block element */
+        margin: 0 auto; /* Center the image horizontally */
+    }
+
+    table th, table td {
+        padding: 5px; /* Reduce padding for table cells */
+        font-size: 12px; /* Decrease font size for better fit */
+    }
+
+    table th {
+        padding-top: 8px; /* Adjust top padding for table headers */
+        padding-bottom: 8px; /* Adjust bottom padding for table headers */
+    }
+
+    table {
+        margin-top: 10px; /* Reduce margin top for the table */
+    }
 }

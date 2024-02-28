@@ -14,19 +14,19 @@
     {% include 'banner.html'%}
     <div class="container">
         <h1>Coin Detection</h1>
-        <div style="display: flex; justify-content: center;">
-            <form method="post" enctype="multipart/form-data">
+        <div class="coin-detection-form-container" style="display: flex; justify-content: center;">
+            <form id="coinDetectionForm" method="post" enctype="multipart/form-data">
                 {% csrf_token %}
-                <input type="file" name="image" accept="image/*" required>
+                <input type="file" name="image" accept="image/*"  required>
                 <button type="submit">Detect</button>
             </form>
-        </div>
+        </div>        
         {% if image_url %}
         <div class="result-container">
             <img src="{{ image_url }}" alt="Submitted Image" class="image">
             <div class="confidence-scores">
                 <h2>Results:</h2>
-                <ul>
+                <ul id="recentDetections">
                     {% for class_name, confidence_score in class_names_with_scores %}
                     <li>
                         <span class="bold-text">{{ class_name }}</span>
@@ -35,11 +35,75 @@
                     </li>
                     {% endfor %}
                 </ul>
+                <h2>Total Value: {{ total_value }}</h2>
+                <div class="reset-session">
+                    <form method="post">
+                        {% csrf_token %}
+                        <button type="submit" name="reset_session">Reset Session</button>
+                    </form>
+                </div>
             </div>
-            
+        </div>
+        {% endif %}
+       
+        <div class="container">
+            <h2>Recent Detections:</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Image</th>
+                        <th>Class Name</th>
+                        <th>Confidence Score</th>
+                        <th>Total Value</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for detection in detections %}
+                    <tr class="{% if forloop.counter > 10 %}hidden{% endif %}">
+                        <td><img src="{{ detection.image_url }}" alt="Image" class="detection-image"></td>
+                        <td>
+                            {% with max_detection=detection.class_names_with_scores|first %}
+                            {% if max_detection %}
+                            {{ max_detection.0 }}
+                            {% endif %}
+                            {% endwith %}
+                        </td>
+                        <td>
+                            {% with max_detection=detection.class_names_with_scores|first %}
+                            {% if max_detection %}
+                            {{ max_detection.1 }}
+                            {% endif %}
+                            {% endwith %}
+                        </td>
+                        <td>{{ detection.total_value }}</td>
+                    </tr>
+                    {% endfor %}
+                    {% if detections|length > 10 %}
+                    <tr id="show-more-row">
+                        <td colspan="4"><a href="#" id="show-more">Show More</a></td>
+                    </tr>
+                    {% endif %}
+                </tbody>
+            </table>
         </div>
         
-        {% endif %}
-    </div>
+        
+
+   
 </body>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var showMoreLink = document.getElementById('show-more');
+        var hiddenRows = document.querySelectorAll('.hidden');
+
+        showMoreLink.addEventListener('click', function (event) {
+            event.preventDefault();
+            hiddenRows.forEach(function (row) {
+                row.classList.remove('hidden');
+            });
+            showMoreLink.parentElement.parentElement.remove();
+        });
+    });
+</script>
 </html>
