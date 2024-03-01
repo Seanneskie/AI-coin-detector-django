@@ -1,4 +1,4 @@
 env/
 myproject/coins/__pycache__/
 myproject/coins/migrations/
-myproject/__pycache__/
+myproject/myproject/__pycache__/
