@@ -6,18 +6,13 @@
 
 2. Navigate to the project directory
 
-3. Create an Virtual Environment
+3. Create an Virtual Environment named "env" folder
 ```python
 python3 -m venv env
 ```
 
-4. Set the virtual environment
-```
-Add your python path variable in activate.bat
-```
-
 5.  Activate the virtual environment (if applicable)
-```
+```powershell
 env\Scripts\activate.bat
 ```
 
@@ -27,12 +22,17 @@ pip3.11 install -r requirements.txt
 ```
 
 7. Go to project directory
-```sh
+```powershell
 cd myproject
 ```
 
-8. Run webserver
+7.
 ```
+python3.11 manage.py migrate
+```
+
+8. Run webserver
+```python
 python3.11 manage.py runserver
 ```
 
