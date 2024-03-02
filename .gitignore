@@ -3,7 +3,10 @@
 # Django
 myproject/media/
 myproject/db.sqlite3
-*/__pycache__/
+__pycache__
 
 # Environments
 env/
+
+# Backup Files
+*.bak
