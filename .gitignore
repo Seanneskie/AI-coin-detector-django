@@ -1,3 +1,9 @@
+# Ref: https://djangowaves.com/tips-tricks/gitignore-for-a-django-project/
+
+# Django
+myproject/media/
+myproject/db.sqlite3
+*/__pycache__/
+
+# Environments
 env/
-*/__pycache__/*
-myproject/coins/migrations/
