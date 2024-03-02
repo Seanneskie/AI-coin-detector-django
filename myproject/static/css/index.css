@@ -270,15 +270,47 @@ nav a:hover {
         height: auto; /* Maintain aspect ratio */
         max-width: 100%; /* Ensure the image doesn't exceed its container width */
     }
+    
+    input[type="file"] {
+        border: none; /* PEARL */
+        padding: 8px;
+        background-color: #f9f9f9;
+        color: #282119; /* EERIE BLACK */
+        border-radius: 5px;
+        font-size: 16px;
+    }
 
+    button[type="submit"] {
+        background-color: #C97338; /* CCA BROWN */
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        
+    }
+    
+    form{
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+    }
+    .container{
+        width: auto;
+        padding: 1rem;
+    }
     .coin-detection-form-container {
         /* Adjust styles for the form container on smaller screens */
         margin-top: 20px;
-        padding: 10px;
+        padding: 1rem;
         border: 1px solid #ccc;
         border-radius: 5px;
         background-color: #f9f9f9;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        width: auto;
+        justify-content: center;
+        align-items: center;
     }
 
     .detection-image {
@@ -300,5 +332,7 @@ nav a:hover {
 
     table {
         margin-top: 10px; /* Reduce margin top for the table */
+        width: auto;
     }
+    
 }

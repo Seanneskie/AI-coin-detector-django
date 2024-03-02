@@ -61,20 +61,8 @@
                     {% for detection in detections %}
                     <tr class="{% if forloop.counter > 10 %}hidden{% endif %}">
                         <td><img src="{{ detection.image_url }}" alt="Image" class="detection-image"></td>
-                        <td>
-                            {% with max_detection=detection.class_names_with_scores|first %}
-                            {% if max_detection %}
-                            {{ max_detection.0 }}
-                            {% endif %}
-                            {% endwith %}
-                        </td>
-                        <td>
-                            {% with max_detection=detection.class_names_with_scores|first %}
-                            {% if max_detection %}
-                            {{ max_detection.1 }}
-                            {% endif %}
-                            {% endwith %}
-                        </td>
+                        <td>{{ detection.class_name }}</td>
+                        <td>{{ detection.confidence }}</td>
                         <td>{{ detection.total_value }}</td>
                     </tr>
                     {% endfor %}
@@ -86,10 +74,7 @@
                 </tbody>
             </table>
         </div>
-        
-        
 
-   
 </body>
 
 <script>
