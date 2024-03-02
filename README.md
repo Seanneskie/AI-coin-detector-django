@@ -6,14 +6,14 @@
 Use `python` or `python3.11` as an alternative to `py` command if not working correctly and for python version conflicts. Same goes for `pip` and `pip3.11`.
 
 1. Clone the repository
-```
+```cmd
 git clone https://github.com/Seanneskie/AI-coin-detector-django
 ```
 
 2. Navigate to the project directory
 
 3. Create an Virtual Environment named "env" folder
-```python
+```py
 py -m venv env
 ```
 
@@ -22,27 +22,27 @@ py -m venv env
 env\Scripts\activate.bat
 ```
 or
-```powershell
+```ps1
 env\Scripts\activate.ps1
 ```
 
 5. Install dependencies
-```python
+```py
 pip install -r requirements.txt
 ```
 
 6. Go to project directory
-```powershell
+```cmd
 cd myproject
 ```
 
 7. Migrate
-```python
+```py
 py manage.py migrate
 ```
 
 8. Run webserver
-```python
+```py
 py manage.py runserver
 ```
 
