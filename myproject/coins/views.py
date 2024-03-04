@@ -55,7 +55,7 @@ def index(request):
                     total_value += 5
                 elif '10 PESO' in class_name:
                     total_value += 10
-                elif '25 CENTS' in class_name:
+                elif '25 CENT' in class_name:
                     total_value += 0.25
                 elif '20 PESO' in class_name:
                     total_value += 20
