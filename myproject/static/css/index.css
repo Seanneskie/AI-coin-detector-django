@@ -220,6 +220,7 @@ nav a:hover {
     text-decoration: underline;
 }
 
+
 /* Styles for iPhone XR portrait mode */
 @media only screen and (min-width: 100px) and (max-width: 896px) {
     body{
