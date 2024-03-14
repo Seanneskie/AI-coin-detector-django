@@ -13,7 +13,6 @@ model = load_model("model/keras_model.h5", compile=False)
 class_names = open("model/labels.txt", "r").readlines()
 
 
-
 def index(request):
     context = {}  # Define a default context
     
@@ -90,4 +89,7 @@ def index(request):
     return render(request, 'index.html', context)
 
 
+def webcam(request):
+    # Assuming 'webcam.html' is directly under your templates directory
+    return render(request, 'webcam.html')
 

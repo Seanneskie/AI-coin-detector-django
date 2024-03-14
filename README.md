@@ -52,13 +52,17 @@ py manage.py runserver
 ## Running on Mobile
 
 6. Repeat Step 1 - 7
+
 7. Run Webserver
+```py
+py manage.py runserver 0.0.0.0:8000
 ```
-py manage.ppy runserver 0.0.0.0:8000
-```
+
 8. Get your IPv4 Address in Command Prompt using `ipconfig`
+
 9. Add your IPv4 Address in Allowed Connection in myproject/settings.py. 
-```
+```py
 ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '192.168.56.1', '192.168.1.7', '192.168.80.160']
 ```
+
 11. Go to your Mobile Browser and run `IPv4 Address:8000` For Example: `192.168.1.7:8000`
