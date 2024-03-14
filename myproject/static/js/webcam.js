@@ -23,7 +23,7 @@ function createFileList(...files) {
 
 function openCamera() {
     document.getElementById('captureImage').addEventListener('click', () => {
-        const cameraWindowUrl = '{% url "webcam" %}';
+        const cameraWindowUrl = 'webcam.html';
         const cameraWindow = window.open(cameraWindowUrl, 'cameraPopup', 'width=800,height=600');
 
         // Post-capture callback
