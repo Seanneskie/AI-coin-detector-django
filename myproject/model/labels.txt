@@ -1,5 +1,10 @@
-0 1 PESO
-1 5 PESO
-2 10 PESO
-3 25 CENTS
-4 20 PESOS
+0 Piso - Back
+1 Piso - Front
+2 Five - Back
+3 Five - Front
+4 Ten - Back
+5 Ten - Front
+6 20 - Back
+7 20 - Front
+8 25 Cents - Back
+9 25 Cents - Front

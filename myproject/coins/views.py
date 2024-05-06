@@ -47,17 +47,28 @@ def index(request):
             total_value = request.session.get('total_value', 0)
             detections = request.session.get('detections', [])  
             # Update the total value based on the detected class
-            if confidence >= 0.6:
-                if '1 PESO' in class_name:
+            if confidence >= 0.5:
+                if 'Piso - Back' in class_name:
                     total_value += 1
-                elif '5 PESO' in class_name:
+                elif 'Piso - Front' in class_name:
+                    total_value += 1
+                elif 'Five - Back' in class_name:
                     total_value += 5
-                elif '10 PESO' in class_name:
+                elif 'Five - Front' in class_name:
+                    total_value += 5
+                elif 'Ten - Back' in class_name:
                     total_value += 10
-                elif '25 CENT' in class_name:
-                    total_value += 0.25
-                elif '20 PESO' in class_name:
+                elif 'Ten - Front' in class_name:
+                    total_value += 10
+                elif '20 - Back' in class_name:
                     total_value += 20
+                elif '20 - Front' in class_name:
+                    total_value += 20
+                elif '25 Cents - Back' in class_name:
+                    total_value += 0.25
+                elif '25 Cents - Front' in class_name:
+                    total_value += 0.25
+
 
             # Update the session with the new total value
             request.session['total_value'] = total_value

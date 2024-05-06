@@ -41,7 +41,7 @@ body {
 
 .image {
     max-width: 100%;
-    height: auto;
+    height: 300px;
     border: 2px solid #282119;
     padding: 20px;
     display: flex;
