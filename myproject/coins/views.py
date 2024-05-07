@@ -3,7 +3,7 @@ from keras.models import load_model
 from PIL import Image, ImageOps
 import numpy as np
 from .models import ImageModel
-
+from django.contrib import messages
 from django.http import JsonResponse
 
 # Load the model
@@ -22,7 +22,7 @@ def index(request):
             # Reset session data
             request.session['total_value'] = 0
             request.session['detections'] = []
-
+            messages.success(request, 'Succesfully reset coin counter.')
             return redirect('index')  # Redirect to avoid resubmitting the form
 
         if request.FILES['image']:

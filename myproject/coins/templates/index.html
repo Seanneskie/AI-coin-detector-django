@@ -8,6 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
     <title>Coin Detection</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10.16.0/dist/sweetalert2.min.css">
+    <!-- Include SweetAlert JS -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.16.0/dist/sweetalert2.min.js"></script>
 </head>
 <body>
     {% include 'navbar.html' %}
@@ -92,6 +95,19 @@
 
 </body>
 
+
+<script>
+    {% if messages %}
+        {% for message in messages %}
+            Swal.fire({
+                title: 'Success!',
+                text: '{{ message }}',
+                icon: 'success',
+                confirmButtonText: 'OK'
+            });
+        {% endfor %}
+    {% endif %}
+</script>
 <script>
     document.addEventListener('DOMContentLoaded', function () {
         var showMoreLink = document.getElementById('show-more');
